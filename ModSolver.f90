@@ -22,15 +22,19 @@ IMPLICIT NONE
 	
 	CALL GridRead	
 
+	CALL MPI_BARRIER(MPI_COMM_WORLD,ierr)
 	CALL CreateDecomposition		
+	CALL MPI_BARRIER(MPI_COMM_WORLD,ierr)
 
 	CALL DistributeGridDims	
 
 	CALL MPI_BARRIER(MPI_COMM_WORLD,ierr)	
 
 	CALL DistributeGridPoints	
+	CALL MPI_BARRIER(MPI_COMM_WORLD,ierr)	
 
 	CALL GatherStartEndIndices		
+	CALL MPI_BARRIER(MPI_COMM_WORLD,ierr)	
 
 
 	CALL AllocateVariables
@@ -42,6 +46,7 @@ IMPLICIT NONE
 
 	
 	CALL AssignGridCoordinates		
+	CALL MPI_BARRIER(MPI_COMM_WORLD,ierr)
 
 	!CALL SolnRead	        	
 

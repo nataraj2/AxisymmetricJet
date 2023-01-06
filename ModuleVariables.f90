@@ -2,11 +2,11 @@ MODULE ModuleVariables
 include 'mpif.h'
 
         !CHARACTER(LEN=200) :: GRID_FILENAME = 'GridAdaptNozzle_LargeSponge.grd'
-        CHARACTER(LEN=200) :: GRID_FILENAME = 'temp.grd'
+        CHARACTER(LEN=200) :: GRID_FILENAME = 'GridAdaptNozzle_LargeSponge.grd'
         !CHARACTER(LEN=80)  :: INITIAL_CONDITION = 'InitialConditionPert_4301x300.q'
         CHARACTER(LEN=80)  :: INITIAL_CONDITION = 'RocFlo-CM.02800000.q'
         !CHARACTER(LEN=200) :: INITIAL_CONDITION = 'jet_180x227_nozzle_NSCBC.q'
-        CHARACTER(LEN=200) :: TARGET_FILE = 'temp.q'
+        CHARACTER(LEN=200) :: TARGET_FILE = 'TimeAvgSolnForTarget.q'
         CHARACTER(LEN=200) :: bc_file = 'bc_4400x640_nozzle.dat'
 
 	CHARACTER(LEN=200) :: RHS_FILENAME = 'jet_rhs.q'

@@ -8,7 +8,8 @@ The intel compilers have some issue in the plot3d file reading. The compile scri
 ```
 git clone https://github.com/nataraj2/AxisymmetricJet.git
 cd AxisymmetricJet
-sh compile.sh 
+sh run_compile.sh 
+idev -p development -N 2 -n 128 -m 150
 ibrun -n <nprocs> ./run_AxiJet
 ```
 Make sure `nprocs` is the product of the integers in `dims` in `ModuleVariables.f90`. 

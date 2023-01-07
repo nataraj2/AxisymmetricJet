@@ -58,7 +58,6 @@ INTEGER(KIND=8) :: datasize
         
        ENDDO
 
-	PRINT*, "DONE!"
 	
 	
 	!CALL StopTheCode

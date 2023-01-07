@@ -3,6 +3,7 @@ include 'mpif.h'
 
         !CHARACTER(LEN=200) :: GRID_FILENAME = 'GridAdaptNozzle_LargeSponge.grd'
         CHARACTER(LEN=200) :: GRID_FILENAME = 'GridAdaptNozzle_LargeSponge.grd'
+        !CHARACTER(LEN=200) :: GRID_FILENAME = 'temp.grd'
         !CHARACTER(LEN=80)  :: INITIAL_CONDITION = 'InitialConditionPert_4301x300.q'
         CHARACTER(LEN=80)  :: INITIAL_CONDITION = 'RocFlo-CM.02800000.q'
         !CHARACTER(LEN=200) :: INITIAL_CONDITION = 'jet_180x227_nozzle_NSCBC.q'
@@ -124,7 +125,7 @@ include 'mpif.h'
         PARAMETER(RIGHT=4)
         INTEGER numtasks, rank, source, dest, outbuf, tag, ierr, inbuf(4), nbrs(4), dims(2), dimsforcartcomm(2), &
                 coords(2), coordsforcartcomm(2), stats(MPI_STATUS_SIZE, 8), reqs(8), cartcomm, periods(2), reorder, procrank
-        DATA inbuf /MPI_PROC_NULL,MPI_PROC_NULL,MPI_PROC_NULL, MPI_PROC_NULL/,  dims /8,4/, dimsforcartcomm /0,0/, tag /1/, periods /0,0/, reorder /1/ 
+        DATA inbuf /MPI_PROC_NULL,MPI_PROC_NULL,MPI_PROC_NULL, MPI_PROC_NULL/,  dims /16,8/, dimsforcartcomm /0,0/, tag /1/, periods /0,0/, reorder /1/ 
 		
 
 	INTEGER(KIND=8) :: Nz, Nr, istart, iend, jstart, jend, i_indx, j_indx, bcistart, bciend, bcjstart, bcjend, bctype, bcdir, bcno, total_no_bcs, bccount

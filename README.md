@@ -11,7 +11,7 @@ cd AxisymmetricJet
 sh compile.sh 
 ibrun -n <nprocs> ./run_AxiJet
 ```
-Make sure `nprocs` is the product of the integers in `dims` in `ModuleVariables.f90`
+Make sure `nprocs` is the product of the integers in `dims` in `ModuleVariables.f90`. 
 `noutput` in `ModuleVariables.f90` is the frequency of writing the output solution files.
 
 # Running

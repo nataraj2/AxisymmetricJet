@@ -18,8 +18,7 @@ $-\Bigg(2+\cfrac{\lambda}{\mu}\Bigg)\frac{V_r}{r^2}\Bigg)+\frac{\partial\mu}{\pa
 
 $S_\theta=\frac{1}{Re}\Bigg[\mu\Bigg(\frac{\partial^2V_\theta}{\partial r^2}+\Bigg(1+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r}\frac{\partial^2V_\theta}{\partial\theta\partial r}+\Bigg(2+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r^2}\frac{\partial^2V_\theta}{\partial\theta^2}+ \Bigg(3+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r^2}\frac{\partial V_r}{\partial\theta}+\Bigg(1+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r}\frac{\partial^2V_z}{\partial\theta\partial z} + \frac{\partial^2V_\theta}{\partial z^2} + \frac{1}{r}\frac{\partial V_\theta}{\partial r} - \frac{V_\theta}{r^2}\Bigg)+$
 $\frac{\partial\mu}{\partial r}\Bigg(\frac{\partial V_\theta}{\partial r} + \frac{1}{r}\frac{\partial V_r}{\partial\theta} - \frac{V_\theta}{r}\Bigg)$ 
-$+\frac{\partial\mu}{\partial\theta}\Bigg(\Bigg(2+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r^2}\frac{\partial V_\theta}{\partial\theta} + \cfrac{(2\mu+\lambda)}{\mu}\frac{V_r}{r^2}+\cfrac{\lambda}{\mu}\frac{1}{r}\frac{\partial V_r}{\partial r} +\cfrac{\lambda}{\mu}\frac{1}{r}\frac{\partial V_z}{\partial z}\Bigg)$  
-$+\frac{\partial\mu}{\partial z}\Bigg(\frac{\partial V_\theta}{\partial z} + \frac{1}{r}\frac{\partial V_z}{\partial\theta}\Bigg)\Bigg]$
+$+\frac{\partial\mu}{\partial\theta}\Bigg(\Bigg(2+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r^2}\frac{\partial V_\theta}{\partial\theta} + \cfrac{(2\mu+\lambda)}{\mu}\frac{V_r}{r^2}+\cfrac{\lambda}{\mu}\frac{1}{r}\frac{\partial V_r}{\partial r} +\cfrac{\lambda}{\mu}\frac{1}{r}\frac{\partial V_z}{\partial z}\Bigg)+\frac{\partial\mu}{\partial z}\Bigg(\frac{\partial V_\theta}{\partial z} + \frac{1}{r}\frac{\partial V_z}{\partial\theta}\Bigg)\Bigg]$
  
 
 

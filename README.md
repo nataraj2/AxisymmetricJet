@@ -1,4 +1,8 @@
 # Compressible flow solver for axisymmetric, nozzle jets
+
+## Mach 1.5 axisymmetric nozzle jet - vorticity and noise
+<img src="Images/TimeAvgNoControl_Final.gif?raw=true&v=100" alt="your_alternative_text" width="100%" height="100%" loop="true" autoplay="true">
+
 This repository contains a MPI parallelized direct numerical simualtion flow solver for 
 aeroacoustic analysis of axisymmetric nozzles jets. The compressible Navier-Stokes 
 equations are solved using fourth-order finite difference discretization with summation-by-parts (SBP) 
@@ -33,8 +37,6 @@ $+\frac{\partial V_z}{\partial z}\Bigg((2\mu+\lambda)\frac{\partial V_z}{\partia
  
 
 
-## Mach 1.5 axisymmetric nozzle jet - vorticity and noise
-<img src="Images/TimeAvgNoControl_Final.gif?raw=true&v=100" alt="your_alternative_text" width="100%" height="100%" loop="true" autoplay="true">
 
 # Installation, compilation and running
 The following are the instructions for compiling on Stampede. 

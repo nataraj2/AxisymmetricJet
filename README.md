@@ -13,7 +13,7 @@ $\rho\frac{\partial T}{\partial t} + \rho\Bigg(V_r\frac{\partial T}{\partial r} 
 
 where  
  
-$S_r =\frac{1}{Re}\Bigg[\mu\Bigg(\Bigg(2+\cfrac{\lambda}{\mu}\Bigg)\frac{\partial^2V_r}{\partial r^2}$ + \Bigg(2+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r}\frac{\partial V_r}{\partial r}$
+$S_r =\frac{1}{Re}\Bigg[\mu\Bigg(\Bigg(2+\cfrac{\lambda}{\mu}\Bigg)\frac{\partial^2V_r}{\partial r^2}$ + \Bigg(2+\cfrac{\lambda}{\mu}\Bigg)$
 
 $+ \Bigg(1+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r}\frac{\partial^2V_r}{\partial r\partial\theta} + \Bigg(1+\cfrac{\lambda}{\mu}\Bigg)\frac{\partial^2V_z}{\partial z\partial r} + \frac{1}{r^2}\frac{\partial V_r^2}{\partial\theta^2}
 -\Bigg(3+\cfrac{\lambda}{\mu}\Bigg)\frac{1}{r^2}\frac{\partial V_\theta}{\partial\theta}+\frac{\partial^2V_r}{\partial z^2}-\Bigg(2+\cfrac{\lambda}{\mu}\Bigg)\frac{V_r}{r^2}\Bigg)

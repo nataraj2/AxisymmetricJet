@@ -3,12 +3,13 @@ This repository contains a MPI parallelized direct numerical simualtion flow sol
 aeroacoustic analysis of axisymmetric nozzles jets. The compressible Navier-Stokes 
 equations are solved using fourth-order finite difference discretization with summation-by-parts (SBP) 
 operators and the simulataneous approximation term (SAT) approach to implement the boundary conditions.
-
+The governing equations in cylindrical polar coordinates for the compressible Navier-Stokes equations are  
+ 
 $\frac{\partial\rho}{\partial t} + \Bigg(V_r\frac{\partial\rho}{\partial r} + \frac{V_\theta}{r}\frac{\partial\rho}{\partial\theta} + V_z\frac{\partial\rho}{\partial z}\Bigg) + \rho\Bigg(\frac{\partial V_r}{\partial r} + \frac{V_r}{r} + \frac{1}{r}\frac{\partial V_\theta}{\partial\theta} + \frac{\partial V_z}{\partial z}\Bigg) = 0 $  
-$\rho\frac{\partial V_r}{\partial t} + \rho\Bigg(V_r\frac{\partial V_r}{\partial r} + \frac{V_\theta}{r}\frac{\partial V_r}{\partial\theta} - \frac{V_\theta^2}{r} + V_z\frac{\partial V_r}{\partial z}\Bigg) + \frac{1}{\gamma }\Bigg(\rho\frac{\partial T}{\partial r}+T\frac{\partial \rho}{\partial r}\Bigg) =S_r$    
-$\rho\frac{\partial V_\theta}{\partial t} + \rho\Bigg(V_r\frac{\partial V_\theta}{\partial r} + \frac{V_\theta}{r}\frac{\partial V_\theta}{\partial\theta} + \frac{V_rV_\theta}{r} + V_z\frac{\partial V_\theta}{\partial z}\Bigg) + \frac{1}{\gamma }\Bigg(\frac{\rho}{r}\frac{\partial T}{\partial \theta}+\frac{T}{r}\frac{\partial\rho}{\partial\theta}\Bigg)=S_\theta$  
-$\rho\frac{\partial V_z}{\partial t} + \rho\Bigg(V_r\frac{\partial V_z}{\partial r} + \frac{V_\theta}{r}\frac{\partial V_z}{\partial\theta} + V_z\frac{\partial V_z}{\partial z}\Bigg) + \frac{1}{\gamma }\Bigg(\rho\frac{\partial T}{\partial z} + T\frac{\partial\rho}{\partial z}\Bigg)=S_z$  
-$\rho\frac{\partial T}{\partial t} + \rho\Bigg(V_r\frac{\partial T}{\partial r} + \frac{V_\theta}{r}\frac{\partial T}{\partial\theta} + V_z\frac{\partial T}{\partial z}\Bigg) + (\gamma-1)\rho T\Bigg(\frac{\partial V_r}{\partial r} + \frac{V_r}{r} + \frac{1}{r}\frac{\partial V_\theta}{\partial\theta} + \frac{\partial V_z}{\partial z}\Bigg)=S_T$  
+$\rho\frac{\partial V_r}{\partial t} + \rho\Bigg(V_r\frac{\partial V_r}{\partial r} + \frac{V_\theta}{r}\frac{\partial V_r}{\partial\theta} - \frac{V_\theta^2}{r} + V_z\frac{\partial V_r}{\partial z}\Bigg) + \frac{1}{\gamma }\Bigg(\rho\frac{\partial T}{\partial r}+T\frac{\partial \rho}{\partial r}\Bigg) = S_r$    
+$\rho\frac{\partial V_\theta}{\partial t} + \rho\Bigg(V_r\frac{\partial V_\theta}{\partial r} + \frac{V_\theta}{r}\frac{\partial V_\theta}{\partial\theta} + \frac{V_rV_\theta}{r} + V_z\frac{\partial V_\theta}{\partial z}\Bigg) + \frac{1}{\gamma }\Bigg(\frac{\rho}{r}\frac{\partial T}{\partial \theta}+\frac{T}{r}\frac{\partial\rho}{\partial\theta}\Bigg)= S_theta$  
+$\rho\frac{\partial V_z}{\partial t} + \rho\Bigg(V_r\frac{\partial V_z}{\partial r} + \frac{V_\theta}{r}\frac{\partial V_z}{\partial\theta} + V_z\frac{\partial V_z}{\partial z}\Bigg) + \frac{1}{\gamma }\Bigg(\rho\frac{\partial T}{\partial z} + T\frac{\partial\rho}{\partial z}\Bigg)= S_z$  
+$\rho\frac{\partial T}{\partial t} + \rho\Bigg(V_r\frac{\partial T}{\partial r} + \frac{V_\theta}{r}\frac{\partial T}{\partial\theta} + V_z\frac{\partial T}{\partial z}\Bigg) + (\gamma-1)\rho T\Bigg(\frac{\partial V_r}{\partial r} + \frac{V_r}{r} + \frac{1}{r}\frac{\partial V_\theta}{\partial\theta} + \frac{\partial V_z}{\partial z}\Bigg)= S_T$  
 
 
 ## Mach 1.5 axisymmetric nozzle jet - vorticity and noise

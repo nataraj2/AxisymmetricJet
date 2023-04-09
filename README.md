@@ -39,7 +39,7 @@ $+\frac{\partial V_z}{\partial z}\Bigg((2\mu+\lambda)\frac{\partial V_z}{\partia
 
 
 # Installation, compilation and running
-The following are the instructions for compiling on Stampede. 
+The following are the instructions for compiling on the Stampede2 supercomputer at Texas Advanced Supercomputing Center (TACC). 
 The gcc compilers in `/opt/apps/gcc9_1/mvapich2/2.3.7/bin` have to be used.
 The intel compilers have some issue in the plot3d file reading. The compile script 
 `run_compile.sh` uses the gcc compilers. 

@@ -4,7 +4,7 @@ aeroacoustic analysis of axisymmetric nozzles jets. The compressible Navier-Stok
 equations are solved using fourth-order finite difference discretization with summation-by-parts (SBP) 
 operators and the simulataneous approximation term (SAT) approach to implement the boundary conditions.
 
-## Mach 1.5 axisymmetric nozzle jet
+## Mach 1.5 axisymmetric nozzle jet -- vorticity and noise
 <img src="Images/TimeAvgNoControl_Final.gif?raw=true&v=100" alt="your_alternative_text" width="100%" height="100%" loop="true" autoplay="true">
 
 # Installation and compilation 

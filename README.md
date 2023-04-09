@@ -3,10 +3,15 @@
 ## Mach 1.5 axisymmetric nozzle jet - vorticity and noise
 <img src="Images/TimeAvgNoControl_Final.gif?raw=true&v=100" alt="your_alternative_text" width="100%" height="100%" loop="true" autoplay="true">
 
+## Introduction
 This repository contains a MPI parallelized direct numerical simualtion flow solver for 
 aeroacoustic analysis of axisymmetric nozzles jets. The compressible Navier-Stokes 
-equations are solved using fourth-order finite difference discretization with summation-by-parts (SBP) 
-operators and the simulataneous approximation term (SAT) approach to implement the boundary conditions.
+equations are solved using fourth-order Runge-Kutta for the temporal discretization, 
+fourth-order finite difference discretization for the spatial derivatives with summation-by-parts (SBP) 
+operators, and the simulataneous approximation term (SAT) approach to implement the boundary conditions.
+
+## Governing equations
+
 The governing equations in cylindrical polar coordinates for the compressible Navier-Stokes equations are  
  
 $\frac{\partial\rho}{\partial t} + \Bigg(V_r\frac{\partial\rho}{\partial r} + \frac{V_\theta}{r}\frac{\partial\rho}{\partial\theta} + V_z\frac{\partial\rho}{\partial z}\Bigg) + \rho\Bigg(\frac{\partial V_r}{\partial r} + \frac{V_r}{r} + \frac{1}{r}\frac{\partial V_\theta}{\partial\theta} + \frac{\partial V_z}{\partial z}\Bigg) = 0 $  

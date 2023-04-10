@@ -38,10 +38,9 @@ $+\frac{\gamma(\gamma-1)}{Re}\mu\Bigg[\frac{\partial V_r}{\partial r}\Bigg((2\mu
 $+\Bigg(\frac{\partial V_r}{\partial\theta}+\frac{\partial V_\theta}{\partial r} - \frac{V_\theta}{r}\Bigg)\Bigg(\frac{\partial V_\theta}{\partial r} + \frac{1}{r}\frac{\partial V_r}{\partial\theta} - \frac{V_r}{r}\Bigg)$
 $+\Bigg(\frac{1}{r}\frac{\partial V_\theta}{\partial\theta}+\frac{V_r}{r}\Bigg)\Bigg((2\mu+\lambda)\frac{1}{r}\frac{\partial V_\theta}{\partial\theta}+(2\mu+\lambda)\frac{V_r}{r}+\lambda\frac{\partial V_r}{\partial r} +\lambda\frac{\partial V_z}{\partial z}\Bigg)$
 $+\Bigg(\frac{\partial V_\theta}{\partial z}+\frac{1}{r}\frac{\partial V_z}{\partial\theta}\Bigg)\Bigg(\frac{\partial V_\theta}{\partial z}+\frac{1}{r}\frac{\partial V_z}{\partial\theta}\Bigg)$
-$+\frac{\partial V_z}{\partial z}\Bigg((2\mu+\lambda)\frac{\partial V_z}{\partial z}+\lambda\frac{\partial V_r}{\partial r} +\lambda\frac{V_r}{r}+\lambda\frac{1}{r}\frac{\partial V_\theta}{\partial\theta}\Bigg) + \Bigg(\frac{\partial V_r}{\partial z}+\frac{\partial V_z}{\partial r}\Bigg)\Bigg(\frac{\partial V_z}{\partial r}+\frac{\partial V_r}{\partial z}\Bigg)\Bigg]$
+$+\frac{\partial V_z}{\partial z}\Bigg((2\mu+\lambda)\frac{\partial V_z}{\partial z}+\lambda\frac{\partial V_r}{\partial r} +\lambda\frac{V_r}{r}+\lambda\frac{1}{r}\frac{\partial V_\theta}{\partial\theta}\Bigg) + \Bigg(\frac{\partial V_r}{\partial z}+\frac{\partial V_z}{\partial r}\Bigg)\Bigg(\frac{\partial V_z}{\partial r}+\frac{\partial V_r}{\partial z}\Bigg)\Bigg]$  
  
-
-
+A standard power law describes the temperature dependence of the fluid viscosity, $\mu$, and thermal conductivity, $\kappa$ as $\mu =\kappa=T^{2/3}$. The bulk viscosity is $\mu_B=\lambda+2/3\mu=0.6\mu$, where $\lambda$ is the second coefficient of viscosity and the Prandtl number $Pr=\mu C_p/\kappa=0.72$, where $C_p$ is the specific heat at constant pressure. For this nondimensionalization, the equation of state is $p = \rho T$.  
 
 # Installation, compilation and running
 The following are the instructions for compiling on the Stampede2 supercomputer at Texas Advanced Supercomputing Center (TACC). 

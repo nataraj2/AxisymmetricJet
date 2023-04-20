@@ -58,7 +58,7 @@ Make sure `nprocs` is the product of the integers in `dims` in `ModuleVariables.
 `noutput` in `ModuleVariables.f90` is the frequency of writing the output solution files.
 
 # Visualization
-The I/O format used for the files is PLOT3D, which is a standard format for curvilinear, structured meshes and can be read into standard visualization  
+The I/O format used for the files is PLOT3D, which is a standard format for curvilinear, structured meshes and can be read into standard visualization 
 packages such as VisIt, ParaView and Tecplot.
 
 

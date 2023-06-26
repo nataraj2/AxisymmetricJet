@@ -9,7 +9,8 @@ include 'mpif.h'
     CHARACTER(LEN=200) :: bc_file = 'bc.dat'
 
 	! Sponge	
-	double precision :: sponge_start_top = 12.5d0
+	double precision :: sponge_start_top = 12.5d0, sponge_A_top = 0.5d0
+	double precision :: sponge_end_left = 6.0d0, sponge_A_left = 5.0d0
 
 	! Processor decomposition
 	INTEGER dims(2)

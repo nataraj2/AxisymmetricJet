@@ -569,7 +569,7 @@ INTEGER(KIND=8) :: j_indx_start
                 IF(rvec(i,j,k) .ge. sponge_start_top)THEN
                 DO eqn = 1, neqns
                 zeta = ( rvec(i,j,k) - sponge_start_top )/(rvec(i,Nr,k) - sponge_start_top)
-                rhs(i,j,k,eqn) = rhs(i,j,k,eqn) - 0.5D0*zeta**n_sponge*(pv(i,j,k,eqn) - pv_target(i,j,k,eqn) )
+                rhs(i,j,k,eqn) = rhs(i,j,k,eqn) - sponge_A_top*zeta**n_sponge*(pv(i,j,k,eqn) - pv_target(i,j,k,eqn) )
                 ENDDO
                 ENDIF
            ENDDO
@@ -582,10 +582,10 @@ INTEGER(KIND=8) :: j_indx_start
         DO i = 1, Nz
            DO j = j_indx_start, Nr
               DO k = 1, 1
-                IF(zvec(i,j,k) .le. 6.0D0)THEN
+                IF(zvec(i,j,k) .le. sponge_end_left)THEN
                 DO eqn = 1, neqns
-                zeta = ( 6.0D0 - zvec(i,j,k) )/( 6.0D0 )
-                rhs(i,j,k,eqn) = rhs(i,j,k,eqn) - 5.0D0*zeta**n_sponge*(pv(i,j,k,eqn) - pv_target(i,j,k,eqn) )
+                zeta = (sponge_end_left - zvec(i,j,k) )/(sponge_end_left)
+                rhs(i,j,k,eqn) = rhs(i,j,k,eqn) - sponge_A_left*zeta**n_sponge*(pv(i,j,k,eqn) - pv_target(i,j,k,eqn) )
                 ENDDO
                 ENDIF
              ENDDO

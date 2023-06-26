@@ -1,15 +1,22 @@
 MODULE ModuleVariables
 include 'mpif.h'
 
-        !CHARACTER(LEN=200) :: GRID_FILENAME = 'GridAdaptNozzle_LargeSponge.grd'
-        CHARACTER(LEN=200) :: GRID_FILENAME = 'GridAdaptNozzle_LargeSponge.grd'
-        !CHARACTER(LEN=200) :: GRID_FILENAME = 'temp.grd'
-        !CHARACTER(LEN=80)  :: INITIAL_CONDITION = 'InitialConditionPert_4301x300.q'
-        CHARACTER(LEN=80)  :: INITIAL_CONDITION = 'RocFlo-CM.02800000.q'
-        !CHARACTER(LEN=200) :: INITIAL_CONDITION = 'jet_180x227_nozzle_NSCBC.q'
-        CHARACTER(LEN=200) :: TARGET_FILE = 'TimeAvgSolnForTarget.q'
-        CHARACTER(LEN=200) :: bc_file = 'bc_4400x640_nozzle.dat'
+	!!!!! Inputs
+	
+    CHARACTER(LEN=200) :: GRID_FILENAME = 'axijet_mesh.xyz'
+    CHARACTER(LEN=80)  :: INITIAL_CONDITION = 'Restart.q'
+    CHARACTER(LEN=200) :: TARGET_FILE = 'axijet_soln.q'
+    CHARACTER(LEN=200) :: bc_file = 'bc.dat'
 
+	! Sponge	
+	double precision :: sponge_start_top = 12.5d0
+
+	! Processor decomposition
+	INTEGER dims(2)
+	DATA dims /4,2/
+
+	!!!!!!! Inputs end
+	
 	CHARACTER(LEN=200) :: RHS_FILENAME = 'jet_rhs.q'
 
 
@@ -58,20 +65,15 @@ include 'mpif.h'
 	REAL(KIND=8) :: pi = 4.0D0*ATAN(1.0D0), gam = 1.4D0
 	REAL(KIND=8) :: c = 1.0D0, total_time = 40.0D0, delt = 0.00025D0
 	INTEGER(KIND=8) :: no_iterations
-	INTEGER :: noutput = 100
+	INTEGER :: noutput = 200
 	
 	INTEGER(KIND=8) :: do_viscous_terms = 1, write_rhs_file = 1, do_mms = 0
 	INTEGER(KIND=8) :: NSCBC=1
-	REAL(KIND=8) :: Re = 2000.0D0, Pr = 0.72D0
+	REAL(KIND=8) :: Re = 1000.0D0, Pr = 0.72D0
 	REAL(KIND=8) :: fourby3 = 29.0D0/15.0D0, oneby3 = 14.0D0/15.0D0, twoby3 = 1.0D0/15.0D0, sevenby3 = 44.0D0/15.0D0
 	REAL(KIND=8) :: onebyr
  
 
-	! Sponge	
-
-	INTEGER(KIND=8) :: sponge_start_top = -20
-	INTEGER(KIND=8) :: sponge_end_inflow = 59
-	INTEGER(KIND=8) :: sponge_start_outflow = -10 
 	REAL(KIND=8) :: zeta
 	REAL(KIND=8), PARAMETER :: A_sponge = 5.0D0, n_sponge = 2
 		
@@ -120,12 +122,12 @@ include 'mpif.h'
 	INTEGER SIZE, UP, DOWN, LEFT, RIGHT
    	PARAMETER(SIZE=16)
    	PARAMETER(UP=1)
-        PARAMETER(DOWN=2)
-        PARAMETER(LEFT=3)
-        PARAMETER(RIGHT=4)
-        INTEGER numtasks, rank, source, dest, outbuf, tag, ierr, inbuf(4), nbrs(4), dims(2), dimsforcartcomm(2), &
-                coords(2), coordsforcartcomm(2), stats(MPI_STATUS_SIZE, 8), reqs(8), cartcomm, periods(2), reorder, procrank
-        DATA inbuf /MPI_PROC_NULL,MPI_PROC_NULL,MPI_PROC_NULL, MPI_PROC_NULL/,  dims /16,8/, dimsforcartcomm /0,0/, tag /1/, periods /0,0/, reorder /1/ 
+    PARAMETER(DOWN=2)
+    PARAMETER(LEFT=3)
+    PARAMETER(RIGHT=4)
+    INTEGER numtasks, rank, source, dest, outbuf, tag, ierr, inbuf(4), nbrs(4), dimsforcartcomm(2), &
+            coords(2), coordsforcartcomm(2), stats(MPI_STATUS_SIZE, 8), reqs(8), cartcomm, periods(2), reorder, procrank
+    DATA inbuf /MPI_PROC_NULL,MPI_PROC_NULL,MPI_PROC_NULL, MPI_PROC_NULL/, dimsforcartcomm /0,0/, tag /1/, periods /0,0/, reorder /1/ 
 		
 
 	INTEGER(KIND=8) :: Nz, Nr, istart, iend, jstart, jend, i_indx, j_indx, bcistart, bciend, bcjstart, bcjend, bctype, bcdir, bcno, total_no_bcs, bccount
@@ -146,7 +148,7 @@ include 'mpif.h'
 
 	! Variables for Shock Capturing Scheme
 
-	INTEGER(KIND=8) :: ShockCapturing = 1
+	INTEGER(KIND=8) :: ShockCapturing = 0
 	INTEGER(KIND=8) :: rkStep
 
 	REAL(KIND=8), ALLOCATABLE :: MgnStrRate(:,:,:), d2MgnStrRatedxi2(:,:,:), d2MgnStrRatedeta2(:,:,:), d4MgnStrRatedxi4(:,:,:), d4MgnStrRatedeta4(:,:,:)
@@ -158,7 +160,7 @@ include 'mpif.h'
 	REAL(KIND=8) :: dilatation, minus_dilatation, vorticity, f_sw, H_of_minus_dilatation
 
 
-	REAL(KIND=8), PARAMETER :: C_mu = 0.002D0, C_beta = 1.75D0, C_kappa = 0.01D0
+	REAL(KIND=8), PARAMETER :: C_mu = 0.000D0, C_beta = 0.0D0, C_kappa = 0.0D0
 	REAL(KIND=8) :: S11, S12, S13, S21, S22, S23, S31, S32, S33
 	REAL(KIND=8) :: deltaz, deltar
 

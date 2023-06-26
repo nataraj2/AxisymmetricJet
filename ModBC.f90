@@ -566,9 +566,9 @@ INTEGER(KIND=8) :: j_indx_start
         DO i = 1, Nz
            DO j = 1, Nr
               DO k = 1, 1
-                IF(rvec(i,j,k) .ge. 20.0D0)THEN
+                IF(rvec(i,j,k) .ge. sponge_start_top)THEN
                 DO eqn = 1, neqns
-                zeta = ( rvec(i,j,k) - 20.0D0 )/( 30.0D0 - 20.0D0 )
+                zeta = ( rvec(i,j,k) - sponge_start_top )/(rvec(i,Nr,k) - sponge_start_top)
                 rhs(i,j,k,eqn) = rhs(i,j,k,eqn) - 0.5D0*zeta**n_sponge*(pv(i,j,k,eqn) - pv_target(i,j,k,eqn) )
                 ENDDO
                 ENDIF
@@ -595,20 +595,20 @@ INTEGER(KIND=8) :: j_indx_start
 
            ! Outflow sponge
 
-        DO i = 1, Nz
-           DO j = j_indx_start, Nr
-              DO k = 1, 1
+        !DO i = 1, Nz
+           !DO j = j_indx_start, Nr
+              !DO k = 1, 1
 
-                IF(zvec(i,j,k) .ge. 55.0D0)THEN
-                DO eqn = 1, neqns
-                zeta = (zvec(i,j,k)-55.0D0 )/( 20.0D0 )
-                rhs(i,j,k,eqn) = rhs(i,j,k,eqn) - 0.5D0*zeta**n_sponge*(pv(i,j,k,eqn) - pv_target(i,j,k,eqn) )
-                ENDDO
-                ENDIF
+                !IF(zvec(i,j,k) .ge. 55.0D0)THEN
+                !DO eqn = 1, neqns
+                !zeta = (zvec(i,j,k)-55.0D0 )/( 20.0D0 )
+                !rhs(i,j,k,eqn) = rhs(i,j,k,eqn) - 0.5D0*zeta**n_sponge*(pv(i,j,k,eqn) - pv_target(i,j,k,eqn) )
+                !ENDDO
+                !ENDIF
 
-             ENDDO
-           ENDDO
-         ENDDO
+             !ENDDO
+           !ENDDO
+         !ENDDO
 
 
 
